@@ -51,7 +51,8 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
   const message = 'Table';
   const number = parseInt(req.query.number) || 2;
-  res.render('about', { message, number });
+  const limit = parseInt(req.query.limit) || 10;
+  res.render('about', { message, number, limit });
 });
 
 app.listen(port, () => {
