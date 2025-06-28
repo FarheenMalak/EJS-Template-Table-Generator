@@ -34,18 +34,28 @@
   <div class="card p-4">
     <h2 class="mb-4 text-center"><%= message %></h2>
 
-    <form method="GET" action="/about" class="mb-4">
-      <input
-        type="number"
-        name="number"
-        value="<%= number %>"
-        min="1"
-        class="form-control mb-3"
-        placeholder="Enter a number"
-        required
-      />
-      <button type="submit" class="btn btn-custom-blue w-100">Generate Table</button>
-    </form>
+   <form method="GET" action="/about" class="mb-4">
+  <input
+    type="number"
+    name="number"
+    value="<%= number %>"
+    min="1"
+    class="form-control mb-3"
+    placeholder="Enter a number"
+    required
+  />
+  <input
+    type="number"
+    name="limit"
+    value="<%= limit %>"
+    min="1"
+    class="form-control mb-3"
+    placeholder="Enter how far you want the table"
+    required
+  />
+  <button type="submit" class="btn btn-custom-blue w-100">Generate Table</button>
+</form>
+
 
     <table class="table table-bordered text-center">
       <thead class="table-primary">
