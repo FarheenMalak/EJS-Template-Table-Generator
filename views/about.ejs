@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title><%= message %></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .card {
+      min-width: 350px;
+      box-shadow: 0 4px 15px rgba(0, 123, 255, 0.25); 
+      border-radius: 12px;
+    }
+    .btn-custom-blue {
+      background-color: #2f5f92; 
+      border-color: #2f5f92;
+      color: #fff;
+      transition: background-color 0.3s ease;
+    }
+    .btn-custom-blue:hover {
+      background-color: #274e78;
+      border-color:#2f5f92;
+      color: #fff;
+    }
+    h2 {
+      color: #003366;
+      font-weight: 700;
+    }
+    table th, table td {
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+  <div class="card p-4">
+    <h2 class="mb-4 text-center"><%= message %></h2>
+
+    <form method="GET" action="/about" class="mb-4">
+      <input
+        type="number"
+        name="number"
+        value="<%= number %>"
+        min="1"
+        class="form-control mb-3"
+        placeholder="Enter a number"
+        required
+      />
+      <button type="submit" class="btn btn-custom-blue w-100">Generate Table</button>
+    </form>
+
+    <table class="table table-bordered text-center">
+      <thead class="table-primary">
+        <tr>
+          <th>Expression</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(let i = 1; i <= 10; i++) { %>
+          <tr>
+            <td><%= number %> × <%= i %></td>
+            <td><%= number * i %></td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
