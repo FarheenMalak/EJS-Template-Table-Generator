@@ -40,8 +40,8 @@ app.get('/', (req, res) => {
       </head>
       <body>
         <h1>Want to generate tables?</h1>
-        <p>Click the button below to go to the about page!</p>
-        <a href="/about">Go to Tables Page</a>
+        <p>Click the button below!</p>
+        <a href="/about">Generate Tables</a>
       </body>
     </html>
   `);
